@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="description" content="The official wiki for the reddit /r/selfhosted community">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Docker Primer | | /r/SelfHosted Official Wiki</title>
+
+    
+    <link href="/css/nucleus.css?1673960144" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1673960144" rel="stylesheet">
+    <link href="/css/hybrid.css?1673960144" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1673960144" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1673960144" rel="stylesheet">
+    <link href="/css/auto-complete.css?1673960144" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1673960144" rel="stylesheet">
+    <link href="/css/theme.css?1673960144" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1673960144" rel="stylesheet">
+    
+    <link href="/css/theme-green.css?1673960144" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1673960144"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/guides/devops-toolchains/docker/introduction/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <img src="/images/logo.png" alt="Selfhosted Logo" height="100px" />
+<h5>/r/Selfhosted Official Wiki</h5>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1673960144"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1673960144"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1673960144"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/" title="Contribution Guidelines" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/">
+          Contribution Guidelines
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/get-started/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/get-started/">
+          Getting Started
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/adding-a-page/" title="Adding a Page" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/adding-a-page/">
+          Adding a Page
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/file-structure/" title="File Structure" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/file-structure/">
+          File Structure
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/modify-a-page/" title="Modify a Page" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/modify-a-page/">
+          Modify a Page
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/explanations/" title="Explanations" class="dd-item ">
+        <a href="/explanations/">
+        Explanations
+        
+        </a>
+    </li>
+     
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/difficulty-tiers/" title="Difficulty Tiers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/difficulty-tiers/">
+          Difficulty Tiers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/how-to-self-host/" title="How to Self-Host" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/how-to-self-host/">
+          How to Self-Host
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/reverse-proxies/" title="Intro to Reverse Proxies" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/reverse-proxies/">
+          Intro to Reverse Proxies
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/operating-systems/" title="Operating Systems" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/operating-systems/">
+          Operating Systems
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/self-hosted-alternatives/" title="Self-Hosted Alternatives" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/self-hosted-alternatives/">
+          Self-Hosted Alternatives
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/what-is-self-hosting/" title="What is Self-Hosting?" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/what-is-self-hosting/">
+          What is Self-Hosting?
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/" title="Guides" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/guides/">
+          Guides
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/devops-toolchains/" title="DevOps Toolchains" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/guides/devops-toolchains/">
+          DevOps Toolchains
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/devops-toolchains/gitlab-kubernetes/" title="Gitlab Installation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/devops-toolchains/gitlab-kubernetes/">
+          Gitlab Installation
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/reverse-proxy-servers/" title="Reverse Proxy Servers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/reverse-proxy-servers/">
+          Reverse Proxy Servers
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/reverse-proxy-servers/nginx/" title="Nginx Reverse Proxy" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/reverse-proxy-servers/nginx/">
+          Nginx Reverse Proxy
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/virtual-private-networks/" title="Virtual Private Networks" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/virtual-private-networks/">
+          Virtual Private Networks
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/virtual-private-networks/wireguard/" title="WireGuard" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/virtual-private-networks/wireguard/">
+          WireGuard
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/webservers/" title="Webservers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/webservers/">
+          Webservers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>/r/Selfhosted Official Wiki</a> > <a href='/guides/'>Guides</a> > <a href='/guides/devops-toolchains/'>DevOps Toolchains</a> > Docker Primer
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#basics--methodology">Basics &amp; Methodology</a></li>
+        <li><a href="#docker-structure">Docker Structure</a></li>
+        <li><a href="#basic-command-cheatsheet">Basic command cheatsheet</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/normal">normal</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Docker Primer
+            </h1>
+          
+
+        
+
+
+
+	<hr>
+<h2 id="introduction">Introduction</h2>
+<p>This guide will provide a cursory, high-level overview of Docker. This is not intended to replace the <a href="https://docs.docker.com/">official Docker documentation</a>, but is instead meant to distill the contents into an easy-to-read format, specifically aimed at self hosters.</p>
+<p>Docker is available on all Windows, Mac and Linux, but is used most often on Linux machines.  Both Mac and Windows have a graphical interface called <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> which can be used to interface with containers. Recently, DD4L (Docker Desktop for Linux) was made public, unifying the experience across all operating systems. Please note that DD4L runs a VM in the background, so it may be more resource-heavy, but is good for learning the basics.</p>
+<p>In most deployments, especially in the Enterprise space, Docker (and similar containerization solutions) will be run on Linux servers, so it&rsquo;s useful to get some practice with the command line. This guide will provide common command-line commands for managing Docker containers, volumes, images and networks.</p>
+<p>For those who are more comfortable with a graphical experience, great solutions such as <a href="https://portainer.io">Portainer</a> exist, which integrate with the Docker engine and allow for a more robust and user-friendly way to manage a Docker installation.</p>
+<p>Enough intro, let&rsquo;s get started!</p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>Basic understanding of virtualization</li>
+<li>An operating system which supports Docker</li>
+<li>A willingness to learn and make mistakes!</li>
+</ul>
+<h3 id="installation">Installation</h3>
+<p>We&rsquo;ll keep this section simple - follow the <a href="https://docs.docker.com/get-docker/">official installation documents</a> for whichever operating system you are using. The author of this document is using Linux, so any included screenshots will be from a Linux terminal.</p>
+<h3 id="basics--methodology">Basics &amp; Methodology</h3>
+<p>Docker is a <em>containerization</em> engine and platform. What does this mean? Rather than needing to install an entire operating system for a specific application and manage all the dependencies (specific programming libraries, security updates, version updates, etc.), I can instead package <em>only</em> what is needed to keep that application running and place it in a &ldquo;container&rdquo;. This way, I can tightly control what dependencies exist and ensure things don&rsquo;t break.</p>
+<p>In addition, just like a shipping container can fit on a semi truck (or lorry, for the folks not based in the US) or a large ship, a Docker container can be packaged and run on any system that has Docker installed. And since Docker is cross-platform, this ensures ultimate compatibility across all operating systems.</p>
+<h3 id="docker-structure">Docker Structure</h3>
+<p>Docker is organized in a hierarchical fashion:</p>
+<ul>
+<li>A <strong>Dockerfile</strong> is used to specify what commands to run, what to install, etc. This is exactly like what would be done via the command line but is instead in a text file</li>
+<li>A Docker <strong>image</strong> is then constructed from the Dockerfile. The images are built in <strong>layers</strong>, with each command inside the Dockerfile resulting in a new image layer.
+<ul>
+<li>A downside to this layer system is you have to structure your Dockerfile to make sense with how the layers will operate - layers are constructed into the image and then deleted, so you have to plan how the commands will link together. You may not have access to a previous layers&rsquo; output without proper planning.</li>
+<li>Images can be tagged to differentiate versions, i.e. using &lt;imagename&gt;:&lt;v1.0&gt; instead of the default of &lt;latest&gt;.</li>
+</ul>
+</li>
+<li>One or more Docker <strong>containers</strong> can then be created from an image
+<ul>
+<li>Unless otherwise configured, Docker containers are ephemeral - changes you make won&rsquo;t survive a reboot of the container.</li>
+<li>To the point above, Docker containers don&rsquo;t have access to storage or other persistent settings unless explicitly defined. The <strong>VOLUME</strong> option is used to specify the mount points that will be persistently available.</li>
+<li>Unless otherwise specified, containers are <em>ephemeral</em>, or designed to be operated in a &ldquo;run and done&rdquo; type fashion - that is, a container is started, executes a command (defined in the <strong>CMD</strong> portion of it&rsquo;s Dockerfile) and then exits.</li>
+</ul>
+</li>
+<li>Given the hierarchical nature, it&rsquo;s important to note that an <strong>image</strong> <em>cannot</em> be deleted if a <strong>container</strong> is using it. Containers need to be stopped and deleted in order to remove an image that is dependent on it.
+<ul>
+<li>This could be forced but probably isn&rsquo;t a good idea in a production environment</li>
+</ul>
+</li>
+</ul>
+<h3 id="basic-command-cheatsheet">Basic command cheatsheet</h3>
+<p>Let&rsquo;s summarize some basic commands that are commonly used with Docker. These are especially helpful for those managing a Docker installation from a CLI (as opposed to using Portianer or other products, such as Synology, which integrate Docker and provide a GUI for management).</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/guides/" title="Guides"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/guides/devops-toolchains/gitlab-kubernetes/" title="Gitlab Installation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1673960144"></script>
+    <script src="/js/perfect-scrollbar.min.js?1673960144"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1673960144"></script>
+    <script src="/js/jquery.sticky.js?1673960144"></script>
+    <script src="/js/featherlight.min.js?1673960144"></script>
+    <script src="/js/highlight.pack.js?1673960144"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1673960144"></script>
+    <script src="/js/learn.js?1673960144"></script>
+    <script src="/js/hugo-learn.js?1673960144"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1673960144"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>

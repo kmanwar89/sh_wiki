@@ -4,7 +4,12 @@ Title: Self-Hosted Alternatives
 
 ### ALTERNATIVE STUFF HERE
 
-There will be some common choices in some common categories here for some self-hosted alternatives. A more comprehensive list of alternatives will be listed at the bottom of this page.
+There will be some common choices in some common categories here for some self-hosted alternatives.
+
+A comprehensive, master list of self-hosted alternatives can be found at the following two repositories:
+
+- [Self-Hosted Alternatives](https://github.com/awesome-selfhosted/awesome-selfhosted) | Master List for self-hosted alternative software packages.
+- [Self-Hosted Sysadmin](https://github.com/n1trux/awesome-sysadmin) | Similar to the above, but oriented towards the needs of system administrators or IT professionals.
 
 **None of the software listed on this page is endorsed or supported by r/selfhosted.**
 
@@ -76,7 +81,4 @@ You own personal knowledge base!
 
 -----
 
-The master lists of self-hosted alternatives.
 
-- [Self-Hosted Alternatives](https://github.com/awesome-selfhosted/awesome-selfhosted) | Master List for self-hosted alternative software packages.
-- [Self-Hosted Sysadmin](https://github.com/n1trux/awesome-sysadmin) | Similar to the above, but oriented towards the needs of system administrators or IT professionals.

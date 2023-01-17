@@ -166,7 +166,7 @@ Reverse proxies are daemons that accept connections and then connect to another 
 
 Typical use cases for reverse proxies are to provide a unified frontend for multiple backends or hosts. Another common use is for high-availability to provide failover or distribute load between multiple backends serving the same content.
 
-Examples of popular software capable of performing as a reverse proxy are: Squid, HAProxy, Apache, nginx, and Caddy.
+Examples of popular software capable of performing as a reverse proxy are: Squid, HAProxy, Apache, nginx, traefik, Nginx Proxy Manager (NPM) and Caddy.
 
 **[Top]({{<relref "#topics">}} "To the top")**
 
@@ -204,7 +204,7 @@ Popular containers are Linux Containers (LXC), jails (BSD UNIX), Kubernetes, and
 
 Virtualization is a lower level form of containerization. There are many forms of virtualization that provide different sets of features/tradeoffs.
 
-In practice, it often virtualizes whole or major parts of an operating system.
+In practice, it often virtualizes whole or major parts of an operating system. Virtualization also requires significantly more resources than a container, and can either be on an empty (bare metal) server or may be nested, such a VMWare Workstation/Virtualbox.
 
 ##### Full virtualization
 

@@ -29,3 +29,21 @@ As you can see, it is much nicer to reach these services through a single domain
 You can even couple this with a self-hosted VPN so that these requests can be proxied to different services on different networks in different locations. All you need to do is to make sure the proxy and the services are on the same VPN and to use the VPN IP addresses.
 
 You don't have to use folders either. You can use subdomains as well such as music.mydomain.com, cloud.mydomain.com, and forum.mydomain.com respectively. It's all up to you and how you want to structure your services.
+
+
+### **Popular Reverse Proxies**
+
+This wiki already contains steps on how to set up *nginx*, which is one of the more popular reverse proxies and may be encountered in enterprise environments, however it is not the only option. Some other options include:
+
+- Nginx Proxy Manager (GUI front-end to NGINX)
+- Caddy (can be used as both an HTTP server or as a reverse proxy, so it is included here as well)
+- Traefik
+
+The general concept of these is the same as mentioned above - they allow you to host multiple services from behind a single IP address, they allow for flexibility and control and, most importantly, they offer *security* by handling SSL for you. A brief list of features to help you decide:
+
+|            | Graphical  interface | File-based  configuration | Handle SSL  automatically | Route traffic  based on labels | Used in Enterprise Deployments | Allow configuration of subdomains and  subdirectories | Easy to read configuration | Integrate directly into docker compose files |
+|:----------:|:--------------------:|:-------------------------:|:-------------------------:|:------------------------------:|:------------------------------:|:-----------------------------------------------------:|:--------------------------:|:--------------------------------------------:|
+|     NPM    |           X          |                           |             X             |                                |                                |                           X                           |                            |                                              |
+|   Traefik  |                      |             X             |             X             |                X               |                                |                           X                           |              X             |                       X                      |
+|    Caddy   |                      |             X             |             X             |                                |                                |                           X                           |              X             |                                              |
+| Pure NGINX |                      |             X             |             X             |                                |                X               |                           X                           |                            |                                              |

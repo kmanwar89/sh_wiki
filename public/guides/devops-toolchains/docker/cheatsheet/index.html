@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="description" content="The official wiki for the reddit /r/selfhosted community">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title> | | /r/SelfHosted Official Wiki</title>
+
+    
+    <link href="/css/nucleus.css?1673960144" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1673960144" rel="stylesheet">
+    <link href="/css/hybrid.css?1673960144" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1673960144" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1673960144" rel="stylesheet">
+    <link href="/css/auto-complete.css?1673960144" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1673960144" rel="stylesheet">
+    <link href="/css/theme.css?1673960144" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1673960144" rel="stylesheet">
+    
+    <link href="/css/theme-green.css?1673960144" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1673960144"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/guides/devops-toolchains/docker/cheatsheet/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <img src="/images/logo.png" alt="Selfhosted Logo" height="100px" />
+<h5>/r/Selfhosted Official Wiki</h5>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1673960144"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1673960144"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1673960144"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/" title="Contribution Guidelines" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/">
+          Contribution Guidelines
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/get-started/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/get-started/">
+          Getting Started
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/adding-a-page/" title="Adding a Page" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/adding-a-page/">
+          Adding a Page
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/file-structure/" title="File Structure" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/file-structure/">
+          File Structure
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/contribution/modify-a-page/" title="Modify a Page" class="dd-item
+        
+        
+        
+        ">
+      <a href="/contribution/modify-a-page/">
+          Modify a Page
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/explanations/" title="Explanations" class="dd-item ">
+        <a href="/explanations/">
+        Explanations
+        
+        </a>
+    </li>
+     
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/difficulty-tiers/" title="Difficulty Tiers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/difficulty-tiers/">
+          Difficulty Tiers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/how-to-self-host/" title="How to Self-Host" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/how-to-self-host/">
+          How to Self-Host
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/reverse-proxies/" title="Intro to Reverse Proxies" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/reverse-proxies/">
+          Intro to Reverse Proxies
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/operating-systems/" title="Operating Systems" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/operating-systems/">
+          Operating Systems
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/self-hosted-alternatives/" title="Self-Hosted Alternatives" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/self-hosted-alternatives/">
+          Self-Hosted Alternatives
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/what-is-self-hosting/" title="What is Self-Hosting?" class="dd-item
+        
+        
+        
+        ">
+      <a href="/getting-started/what-is-self-hosting/">
+          What is Self-Hosting?
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/" title="Guides" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/guides/">
+          Guides
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/devops-toolchains/" title="DevOps Toolchains" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/guides/devops-toolchains/">
+          DevOps Toolchains
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/devops-toolchains/gitlab-kubernetes/" title="Gitlab Installation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/devops-toolchains/gitlab-kubernetes/">
+          Gitlab Installation
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/reverse-proxy-servers/" title="Reverse Proxy Servers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/reverse-proxy-servers/">
+          Reverse Proxy Servers
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/reverse-proxy-servers/nginx/" title="Nginx Reverse Proxy" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/reverse-proxy-servers/nginx/">
+          Nginx Reverse Proxy
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/virtual-private-networks/" title="Virtual Private Networks" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/virtual-private-networks/">
+          Virtual Private Networks
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/virtual-private-networks/wireguard/" title="WireGuard" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/virtual-private-networks/wireguard/">
+          WireGuard
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/guides/webservers/" title="Webservers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/guides/webservers/">
+          Webservers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>/r/Selfhosted Official Wiki</a> > <a href='/guides/'>Guides</a> > <a href='/guides/devops-toolchains/'>DevOps Toolchains</a> > 
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#container-creation">Container creation</a></li>
+        <li><a href="#stopping-containers">Stopping containers</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#deleting-images--containers">Deleting images &amp; containers</a></li>
+    <li><a href="#general-system-cleanup">General system cleanup</a></li>
+    <li><a href="#upgrading-an-image">Upgrading an image</a></li>
+    <li><a href="#naming-and-interacting-with-containers">Naming and interacting with containers</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#log-management">Log management</a></li>
+    <li><a href="#get-a-console-into-the-container">Get a console into the container</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#create-docker-network">Create docker network</a></li>
+    <li><a href="#attach-a-container-to-that-network">Attach a container to that network</a></li>
+    <li><a href="#exposing-host-and-container-ports">Exposing Host and Container ports</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              
+            </h1>
+          
+
+        
+
+
+
+	<h1 id="information-gathering">Information gathering</h1>
+<p><code>docker ps -a</code> or <code>docker container list</code> - List all containers
+<code>docker ps -aq</code> - List all container ID&rsquo;s</p>
+<ul>
+<li>This command is useful because it can be called as a variable [ex: <em>$(docker ps -aq)</em>] and fed into other commands (such as <code>docker stop</code> or <code>docker rm</code>) as shown in the command above.</li>
+</ul>
+<p><code>docker image list</code> - List all docker images
+<code>docker system df</code> - Docker disk usage
+<code>docker system info</code> - System info</p>
+<h1 id="interacting-with-containers">Interacting with containers</h1>
+<blockquote>
+<h3 id="container-creation">Container creation</h3>
+</blockquote>
+<p><code>docker start</code> - starts any stopped container
+<code>docker run</code> - creates &amp; starts the newly-created container</p>
+<blockquote>
+<h3 id="stopping-containers">Stopping containers</h3>
+</blockquote>
+<p><code>docker stop $(docker ps -aq)</code> - stop all running containers by feeding in container ID&rsquo;s
+<code>docker stop &lt;container name | container ID&gt;</code> - stop a single container using SIGTERM</p>
+<blockquote>
+<h4 id="alternate-syntax">Alternate syntax:</h4>
+</blockquote>
+<p><code>docker container stop &lt;container name | container ID&gt;</code>
+<code>docker kill &lt;container name | container ID&gt;</code> - kill a single container using SIGKILL</p>
+<h1 id="building">Building</h1>
+<p>Note: the file must be called <em>Dockerfile</em>, verbatim. It is not a file extension, but that is the default filename that the docker build command looks for.</p>
+<p><code>docker build .</code> - build an image from a Dockerfile in the current directory
+<code>docker build [-t username/repository:tag] .</code> - build an image from a Dockerfile in the current directory, and optionally tag it.
+<code>docker build -t [username/repository:tag] - &lt; [name of dockerfile]</code> - build an image using a Dockerfile read from STDIN
+<code>docker build -f [Dockerfile] .</code> - builds from a Dockerfile in an alternate location</p>
+<p><code>docker run --name &lt;human readable name&gt; &lt;image name&gt;</code> - create a container from an image, and give it a custom name (instead of the system generated ones)</p>
+<h1 id="working-with-docker-compose">Working with Docker Compose</h1>
+<p>Docker Compose is a way of building and interacting with containers using a YAML-formatted file. This has the unique advantage of not having to type out the commands each time, but also allowing for manipulation of networks, databases and inter-connections between containers in a very simple and seamless way.</p>
+<p><code>docker compose up -d</code> - create and start containers from a <em>docker-compose.yml</em> file in a daemonized or &ldquo;detached&rdquo; fashion, i.e. the container will continue running in the background
+<code>docker-compose up --force-recreate --build -d</code> - quick one-liner to pull down changes to a container after modifying the <em>compose</em> file. Can optionally run <em>docker compose up -d</em> again and changes will be reflected</p>
+<h1 id="managing-images">Managing Images</h1>
+<p><code>docker image rm &lt;image name&gt;</code> - deletes an image from local image store
+<code>docker rmi $(docker images -q)</code> - removes all unused images
+<code>docker tag &lt;imagename:oldtag&gt; &lt;username/repository:newtag&gt;</code> - renames/re-tags an image</p>
+<h1 id="using-repositoriesdocker-hub">Using Repositories/Docker Hub</h1>
+<p><code>docker pull &lt;image name&gt;:[tag]</code> - retrieve image from repository
+<code>docker push &lt;username/repository:tag&gt;</code> - pushes image to a repository.</p>
+<ul>
+<li>Currenly, Docker Hub limits to a single private repository in the format &lt;username/repo name&gt;. Tags can be used to manage multiple images within the repository.</li>
+</ul>
+<h1 id="container-and-system-management">Container and System Management</h1>
+<blockquote>
+<h2 id="deleting-images--containers">Deleting images &amp; containers</h2>
+</blockquote>
+<p><code>docker rm $(docker ps -aq)</code> - remove all containers based on container ID. Will not remove containers that haven&rsquo;t been stopped</p>
+<blockquote>
+<h2 id="general-system-cleanup">General system cleanup</h2>
+</blockquote>
+<p><code>docker system prune [--volumes]</code> - removes all stopped containers, networks, dangling images/cache and optionally any unused volumes
+<code>docker volume prune</code> - removes any unused volumes</p>
+<blockquote>
+<h2 id="upgrading-an-image">Upgrading an image</h2>
+</blockquote>
+<p>This is useful when a new version is released; rather than deleting the image and re-downloading it, use the following condensed command to upgrade an image. <a href="https://stackoverflow.com/questions/49316462/how-to-update-existing-images-with-docker-compose">Source</a>
+<code>docker-compose up --force-recreate --build -d</code>
+Can also use:
+<code>docker-compose pull</code></p>
+<blockquote>
+<h2 id="naming-and-interacting-with-containers">Naming and interacting with containers</h2>
+</blockquote>
+<p>When working in a docker-compose file, there are two ways to refer to a container - the name that is present while defining the various components of the compose file, or the &ldquo;container_name&rdquo; directive. For example:</p>
+<pre tabindex="0"><code>CONTAINER ID   IMAGE                              COMMAND                  CREATED             STATUS                          PORTS                                                                                  NAMES
+a5130a954a0f   jc21/nginx-proxy-manager           &#34;/init&#34;                  3 seconds ago       Up 1 second                     0.0.0.0:80-81-&gt;80-81/tcp, :::80-81-&gt;80-81/tcp, 0.0.0.0:443-&gt;443/tcp, :::443-&gt;443/tcp   npm_prod
+</code></pre><p>The name &ldquo;npm_prod&rdquo; is shown above in the far-right column under &ldquo;Names&rdquo;, and this was defined in the compose file under the &ldquo;container_name&rdquo; option:</p>
+<pre tabindex="0"><code>version: &#39;3&#39;
+services:
+  app:
+    image: jc21/nginx-proxy-manager
+    container_name: npm_prod &lt;--------
+</code></pre><p>If this option is removed, the container will inherit a default name in the form of &lt;image name_service name_numeral&gt;. For example:</p>
+<pre tabindex="0"><code>CONTAINER ID   IMAGE                              COMMAND                  CREATED        STATUS                      PORTS                                                                                  NAMES
+c00ecf065e9d   jc21/nginx-proxy-manager           &#34;/init&#34;                  1 second ago   Up 1 second                 0.0.0.0:80-81-&gt;80-81/tcp, :::80-81-&gt;80-81/tcp, 0.0.0.0:443-&gt;443/tcp, :::443-&gt;443/tcp   npm_app_1
+</code></pre><p>The docker-compose file now looks like:</p>
+<pre tabindex="0"><code>version: &#39;3&#39;
+services:
+  app:
+    image: jc21/nginx-proxy-manager
+</code></pre><p>This is a helpful option to help keep track of various containers, to help separate dev/prod or for any other reson where a unique identifier would be helpful, or necessary</p>
+<h1 id="interacting-with-a-container">Interacting with a container</h1>
+<h2 id="log-management">Log management</h2>
+<p><code>docker container logs --tail 100 &lt;container name&gt;</code> - delete last 100 lines of a containers&rsquo; log
+<code>docker logs &lt;container name&gt; --follow</code> - equivalent of <em>tail -f</em> functionality to view logs in real time. Useful for diagnosis</p>
+<h2 id="get-a-console-into-the-container">Get a console into the container</h2>
+<p><code>docker exec -it &lt;container name&gt; /bin/bash</code></p>
+<h1 id="volumes">Volumes</h1>
+<p>There are two main types of volumes - bind and mount, explained by the following graphic:</p>
+<p><img src=":/ff5177757f594e5b994dcfb155fd41c3" alt="b3d2eb112b402b9cbe1651ab5257b387.png"></p>
+<p>The syntax looks like the following &ndash;</p>
+<ul>
+<li>For <em>docker-compose</em>:</li>
+</ul>
+<pre tabindex="0"><code>services:
+  service_name:
+    image: image_repo/image_name:tag
+    container_name: name_of_container
+    volumes:
+      - /path/on/host/machine/to/expose:/path/within/the/docker/container:&lt;optional permissions&gt;
+</code></pre><ul>
+<li>For <em>docker run</em>:</li>
+</ul>
+<pre tabindex="0"><code>docker run -detached -port_to_expose ### \
+    -v /path/on/host/machine/to/expose:/path/within/the/docker/container:&lt;optional permissions&gt;
+</code></pre><h1 id="docker-networking">Docker Networking</h1>
+<h2 id="create-docker-network">Create docker network</h2>
+<p>docker network create &lt;name&gt;</p>
+<h2 id="attach-a-container-to-that-network">Attach a container to that network</h2>
+<p>docker run &ndash;network &lt;name&gt; &ndash;name=<em>name of container</em> [<em>image name</em>]</p>
+<h2 id="exposing-host-and-container-ports">Exposing Host and Container ports</h2>
+<p>Depending on the service running, the container will require either a private, ephemeral port that is decided by the developers, or an exposed, well-known port. For a secure setup behind a reverse proxy (such as NPM), only 3 ports should be bound to the host machine (and thereby forwarded by the router/exposed to the Internet): 80, 81 and 443.</p>
+<p>Other services, such as Pi-Hole, AdGuard or other services that operate on well-known port numbers may require those ports to be exposed (such as 53 for DNS). When creating a docker-compose file, ports are exposed with the following syntax:</p>
+<pre tabindex="0"><code>ports:
+  - &lt;host port&gt;:&lt;container port&gt;
+</code></pre><p>For example, NPM requires 80, 81 and 443, so the port mapping should look like:</p>
+<pre tabindex="0"><code>ports:
+  - 80:80
+  - 81:81
+  - 443:443
+</code></pre><p>On the router, these ports would be directly forwarded. However, since only 1 service can use a port at a time, and multiple services may require well-known ports such as 80 or 443, custom ports can be bound to those, and Docker&rsquo;s service handles the &ldquo;routing&rdquo; of the traffic into the container. If a service requires port 80, for instance, this limitation can be overcome as follows:</p>
+<pre tabindex="0"><code>ports:
+  - 8080:80
+</code></pre>
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/guides/" title="Guides"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/guides/devops-toolchains/gitlab-kubernetes/" title="Gitlab Installation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1673960144"></script>
+    <script src="/js/perfect-scrollbar.min.js?1673960144"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1673960144"></script>
+    <script src="/js/jquery.sticky.js?1673960144"></script>
+    <script src="/js/featherlight.min.js?1673960144"></script>
+    <script src="/js/highlight.pack.js?1673960144"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1673960144"></script>
+    <script src="/js/learn.js?1673960144"></script>
+    <script src="/js/hugo-learn.js?1673960144"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1673960144"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>

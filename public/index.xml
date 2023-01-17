@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>/r/Selfhosted Official Wiki on /r/SelfHosted Official Wiki</title>
+    <link>http://localhost/</link>
+    <description>Recent content in /r/Selfhosted Official Wiki on /r/SelfHosted Official Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="http://localhost/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Explanations</title>
+      <link>http://localhost/explanations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/explanations/</guid>
+      <description>Find explanations and definitions for common terms and concepts related to self-hosting Topics Explanations:
+Servers Daemons Webservers Domain names DNS Reverse proxies Port forwarding Containers Virtualization Virtual private networks Operating systems Servers Servers are machines whose purpose is to provide a service or content over a network. They are typically administered remotely and only connect physically to power and a network. They &amp;ldquo;serve&amp;rdquo; content or services using software daemons.
+Bare metal servers are not virtualized.</description>
+    </item>
+    
+  </channel>
+</rss>

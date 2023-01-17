@@ -20,3 +20,4 @@ Here you can find a couple of articles about the best ways to get started based 
 * Learn about using reverse proxies
 * Learn about self-hosted alternatives to popular services and providers
 * Learn about the most common ways to self-host
+* Some specific guides and tips/tricks for popular self-hosted applications to help avoid pitfalls/wasted time

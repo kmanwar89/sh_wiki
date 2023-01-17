@@ -58,11 +58,9 @@ See your router documentation for directions on setting up port forwarding to th
 
 #### Network configuration
 
-Your ISP is likely to block common ports used for Internet traffic such as 80 (HTTP), 443 (HTTPS), 21 (FTP), 25 (email SMTP), and many others.
+Your ISP *may* block inbound traffic on common ports used for Internet traffic such as 80 (HTTP), 443 (HTTPS), 21 (FTP), 25 (email SMTP), and many others.
 
-Some ISPs will have no problem unblocking some of these ports, but don't expect them to cooperate.
-
-Regardless, there are options to get around these issues if your ISP is non-cooperative. There may be clauses in your service agreement stating that hosting services from your home Internet connection is prohibited. While ISPs rarely take action against customers if they are found in violation of this rule, there are legitimate reasons for having such clause.
+There may be clauses in your service agreement stating that hosting services from your home Internet connection is prohibited. While ISPs rarely take action against customers if they are found in violation of this rule, there are legitimate reasons for having such clause.
 
 Generally if you bypass their restrictions to self-host anyway, they don't care unless you cause problems for them.
 
